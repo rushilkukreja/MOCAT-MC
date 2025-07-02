@@ -1,0 +1,53 @@
+parameter_name,value,description,unit,data_type,category
+DAY2MIN,1440,Minutes per day,minutes/day,int,time_conversion
+DAY2SEC,86400,Seconds per day,seconds/day,int,time_conversion
+YEAR2DAY,365.2425,Days per year,days/year,float,time_conversion
+YEAR2MIN,525949.2,Minutes per year,minutes/year,float,time_conversion
+rad,0.0174533,Radians per degree,rad/deg,float,conversion
+tumin,13.446839,Time unit in minutes,minutes,float,constants
+mu_const,398600.4418,Earth gravitational parameter,km³/s²,float,constants
+radiusearthkm,6378.137,Earth radius,km,float,constants
+j2,0.00108263,J2 harmonic coefficient,unitless,float,constants
+omega_earth,7.2921159e-05,Earth rotation rate,rad/s,float,constants
+PMD,0.4,Post mission disposal probability,unitless,float,scenario
+PMDconstel,0.9,Constellation PMD probability,unitless,float,scenario
+PMDrb,0.55,Rocket body PMD probability,unitless,float,scenario
+alph,0.01,Active control failure probability,unitless,float,scenario
+alph_a,0,Active control failure probability (both active),unitless,float,scenario
+orbtol,5,Orbital tolerance for controlled satellites,km,float,scenario
+step_control,2,Timesteps to check orbit control tolerance,steps,int,scenario
+P_frag,0,Probability per day of rocket body fragmentation,1/day,float,scenario
+P_frag_cutoff,18,Age cutoff for fragmentation,days,float,scenario
+altitude_limit_low,200,Lower altitude limit,km,float,scenario
+altitude_limit_up,2000,Upper altitude limit,km,float,scenario
+missionlifetime,8,Operational life for payloads,years,float,scenario
+time0,datetime(TLEyear,1,1),Simulation start time,datetime,string,simulation
+t0_prop,0,Initial propagation time,minutes,float,simulation
+nyears,200,Simulation duration,years,int,simulation
+tf_prop,105189840,Final propagation time,minutes,float,simulation
+dt_days,5,Sampling time,days,float,simulation
+DeltaT,7200,Sampling time in minutes,minutes,float,simulation
+total_launch_per_year,0,Total launches per year,launches/year,int,launch
+launch_increase_per_year,0,Launch rate increase per year,launches/year²,float,launch
+launch_frequency,13,Launch frequency,days,float,launch
+TLElaunchRepeat,1,Launch repeat mode (0=random, 1=ESA style),unitless,int,launch
+launchRepeatYrs,"[2001,2000]",Min/max year for repeated launches,years,array,launch
+launchRepeatSmooth,0,Average yearly launch rate,unitless,int,launch
+constellationFile,,Constellation file path,path,string,constellation
+constellationSheet,,Constellation sheet name,sheet,string,constellation
+fillMassRadius,2,Mass/radius filling method (0=none, 1=ESA, 2=resample),unitless,int,population
+initpopMultiplier,1,Initial population multiplier,unitless,float,population
+physicalBstar,1,Recalculate B* flag (0/1),unitless,int,population
+use_sgp4,False,Use SGP4 propagator flag,unitless,bool,propagator
+skipCollisions,0,Skip collision step flag,unitless,int,collision
+max_frag,inf,Maximum fragments,unitless,float,collision
+CUBE_RES,50,Cube method resolution,km,float,collision
+collision_alt_limit,45000,Collision altitude limit,km,float,collision
+density_profile,JB2008,Atmospheric density model,model,string,atmosphere
+animation,no,Animation mode,unitless,string,output
+save_diaryName,,Diary save filename,filename,string,output
+save_output_file,11,Save output file type,unitless,int,output
+saveMSnTimesteps,146,Save matsats timesteps,steps,int,output
+paramSSEM,paramSSEM,SSEM parameter structure,struct,object,output
+filename_save,TLE_yyyymmddTHHMMSS_rngseed.mat,Save filename template,filename,string,output
+n_save_checkpoint,inf,Save checkpoint frequency,steps,float,output 

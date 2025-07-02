@@ -1,0 +1,25 @@
+column_index,column_name,description,data_type,example_value,source
+1,semimajor_axis_earth_radii,Semi-major axis in Earth radii,float,1.1234,mattles.SEMIMAJOR_AXIS/radiusearthkm
+2,eccentricity,Orbital eccentricity,float,0.001234,mattles.ECCENTRICITY
+3,inclination_rad,Orbital inclination in radians,float,0.785398,deg2rad(mattles.INCLINATION)
+4,mean_anomaly_rad,Mean anomaly in radians,float,1.570796,deg2rad(mattles.MEAN_ANOMALY)
+5,arg_of_pericenter_rad,Argument of perigee in radians,float,0.523599,deg2rad(mattles.ARG_OF_PERICENTER)
+6,mean_anomaly_rad_2,Mean anomaly in radians (duplicate),float,1.570796,deg2rad(mattles.MEAN_ANOMALY)
+7,bstar,B* drag term,float,0.000123,mattles.BSTAR
+8,mass_kg,Satellite mass in kg,float,1000.0,dmass (from DISCOS)
+9,radius_m,Satellite radius in meters,float,1.5,dradius (from DISCOS)
+10,error_flag,Error flag (0),int,0,zs (zeros)
+11,controlled_flag,Controlled flag (0),int,0,zs (zeros)
+12,a_desired,Desired semi-major axis (0),float,0.0,zs (zeros)
+13,mission_life_years,Mission lifetime in years (0),float,0.0,zs (zeros)
+14,constellation_id,Constellation ID (0),int,0,zs (zeros)
+15,date_created,Date created (NaN),float,NaN,ns (NaN)
+16,launch_date_jd,Launch date in Julian days,float,2458850.0,juliandate(mattles.LAUNCH_DATE)
+17,position_x,Position X component (0),float,0.0,zs (zeros)
+18,position_y,Position Y component (0),float,0.0,zs (zeros)
+19,position_z,Position Z component (0),float,0.0,zs (zeros)
+20,velocity_x,Velocity X component (0),float,0.0,zs (zeros)
+21,velocity_y,Velocity Y component (0),float,0.0,zs (zeros)
+22,velocity_z,Velocity Z component (0),float,0.0,zs (zeros)
+23,object_class,Object classification (1-11),int,1,dobj (from DISCOS)
+24,norad_id,NORAD catalog ID,int,25544,mattles.NORAD_CAT_ID 
