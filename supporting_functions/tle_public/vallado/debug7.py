@@ -1,0 +1,25 @@
+def debug7(dbgfile, satrec, r, v):
+    """
+    debug7.m - Debug output after sgp4 function
+    """
+    print(f'{"-" * 84}', file=dbgfile)
+    print('    inputs :', file=dbgfile)
+    print(f'{"isimp":>7}{satrec.isimp:15d}{"method":>7}{satrec.method:>15}{"aycof":>7}{satrec.aycof:15.9f}{"bstar":>7}{satrec.bstar:15.9f}{"con41":>7}{satrec.con41:15.9f}{"cc1":>7}{satrec.cc1:15.9f}', file=dbgfile)
+    print(f'{"cc4":>7}{satrec.cc4:15.9f}{"cc5":>7}{satrec.cc5:15.9f}{"d2":>7}{satrec.d2:15.9f}{"d3":>7}{satrec.d3:15.9f}{"d4":>7}{satrec.d4:15.9f}{"delmo":>7}{satrec.delmo:15.9f}', file=dbgfile)
+    print(f'{"ecco":>7}{satrec.ecco:15.9f}{"eta":>7}{satrec.eta:15.9f}{"argpo":>7}{satrec.argpo:15.9f}{"argpdot":>7}{satrec.argpdot:15.9f}{"omgcof":>7}{satrec.omgcof:15.9f}{"sinmao":>7}{satrec.sinmao:15.9f}', file=dbgfile)
+    print(f'{"t":>7}{satrec.t:15.9f}{"t2cof":>7}{satrec.t2cof:15.9f}{"t3cof":>7}{satrec.t3cof:15.9f}{"t4cof":>7}{satrec.t4cof:15.9f}{"t5cof":>7}{satrec.t5cof:15.9f}{"x1mth2":>7}{satrec.x1mth2:15.9f}', file=dbgfile)
+    print(f'{"x7thm1":>7}{satrec.x7thm1:15.9f}{"inclo":>7}{satrec.inclo:15.9f}{"mo":>7}{satrec.mo:15.9f}{"mdot":>7}{satrec.mdot:15.9f}{"xno":>7}{satrec.no:15.9f}{"nodeo":>7}{satrec.nodeo:15.9f}', file=dbgfile)
+    print(f'{"nodedt":>7}{satrec.nodedot:15.9f}{"xlcof":>7}{satrec.xlcof:15.9f}{"xmcof":>7}{satrec.xmcof:15.9f}{"nodecf":>7}{satrec.nodecf:15.9f}', file=dbgfile)
+    print('    outputs :', file=dbgfile)
+    print(f'{"error":>7}{satrec.error:15d}{"x":>7}{r[0]:15.9f}{"y":>7}{r[1]:15.9f}{"z":>7}{r[2]:15.9f}{"xdot":>7}{v[0]:15.9f}{"ydot":>7}{v[1]:15.9f}{"zdot":>7}{v[2]:15.9f}', file=dbgfile)
+    print('    extra inputs for ds :', file=dbgfile)
+    print(f'{"irez":>7}{satrec.irez:15d}{"d2201":>7}{satrec.d2201:15.9f}{"d2211":>7}{satrec.d2211:15.9f}{"d3210":>7}{satrec.d3210:15.9f}{"d3222":>7}{satrec.d3222:15.9f}', file=dbgfile)
+    print(f'{"d4410":>7}{satrec.d4410:15.9f}{"d4422":>7}{satrec.d4422:15.9f}{"d5220":>7}{satrec.d5220:15.9f}{"d5232":>7}{satrec.d5232:15.9f}{"d5421":>7}{satrec.d5421:15.9f}{"d5433":>7}{satrec.d5433:15.9f}', file=dbgfile)
+    print(f'{"dedt":>7}{satrec.dedt:15.9f}{"del1":>7}{satrec.del1:15.9f}{"del2":>7}{satrec.del2:15.9f}{"del3":>7}{satrec.del3:15.9f}{"didt":>7}{satrec.didt:15.9f}{"dmdt":>7}{satrec.dmdt:15.9f}', file=dbgfile)
+    print(f'{"dnodt":>7}{satrec.dnodt:15.9f}{"domdt":>7}{satrec.domdt:15.9f}{"e3":>7}{satrec.e3:15.9f}{"ee2":>7}{satrec.ee2:15.9f}{"peo":>7}{satrec.peo:15.9f}{"pgho":>7}{satrec.pgho:15.9f}', file=dbgfile)
+    print(f'{"pho":>7}{satrec.pho:15.9f}{"pinco":>7}{satrec.pinco:15.9f}{"plo":>7}{satrec.plo:15.9f}{"se2":>7}{satrec.se2:15.9f}{"se3":>7}{satrec.se3:15.9f}{"sgh2":>7}{satrec.sgh2:15.9f}', file=dbgfile)
+    print(f'{"sgh3":>7}{satrec.sgh3:15.9f}{"sgh4":>7}{satrec.sgh4:15.9f}{"sh2":>7}{satrec.sh2:15.9f}{"sh3":>7}{satrec.sh3:15.9f}{"si2":>7}{satrec.si2:15.9f}{"si3":>7}{satrec.si3:15.9f}', file=dbgfile)
+    print(f'{"sl2":>7}{satrec.sl2:15.9f}{"sl3":>7}{satrec.sl3:15.9f}{"sl4":>7}{satrec.sl4:15.9f}{"gsto":>7}{satrec.gsto:15.9f}{"xfact":>7}{satrec.xfact:15.9f}{"xgh2":>7}{satrec.xgh2:15.9f}', file=dbgfile)
+    print(f'{"xgh3":>7}{satrec.xgh3:15.9f}{"xgh4":>7}{satrec.xgh4:15.9f}{"xh2":>7}{satrec.xh2:15.9f}{"xh3":>7}{satrec.xh3:15.9f}{"xi2":>7}{satrec.xi2:15.9f}{"xi3":>7}{satrec.xi3:15.9f}', file=dbgfile)
+    print(f'{"xl2":>7}{satrec.xl2:15.9f}{"xl3":>7}{satrec.xl3:15.9f}{"xl4":>7}{satrec.xl4:15.9f}{"xlamo":>7}{satrec.xlamo:15.9f}{"zmol":>7}{satrec.zmol:15.9f}{"zmos":>7}{satrec.zmos:15.9f}', file=dbgfile)
+    print(f'{"atime":>7}{satrec.atime:15.9f}{"xli":>7}{satrec.xli:15.9f}{"xni":>7}{satrec.xni:15.9f}', file=dbgfile) 
