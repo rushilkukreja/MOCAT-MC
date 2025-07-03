@@ -1,25 +1,25 @@
 """
 ------------------------------------------------------------------------------
 
-                           function [theta,theta1,theta2] = anglesdr( r1,r2,r3 )
+                           function [theta,theta1,theta2] = anglesl( r1,r2,r3 )
 
   this function finds the angles between three position vectors using the
-    cosine law.
+    law of cosines.
 
   author        : david vallado                  719-573-2600   27 may 2002
 
   references    :
     vallado       2001, 246
 
-[theta,theta1,theta2] = anglesdr( r1,r2,r3 )
+[theta,theta1,theta2] = anglesl( r1,r2,r3 )
 ------------------------------------------------------------------------------
 """
 import numpy as np
 
-def anglesdr(r1, r2, r3):
+def anglesl(r1, r2, r3):
     def mag(v):
         return np.linalg.norm(v)
-    # Compute the angles using the cosine law
+    # Compute the angles using the law of cosines
     cos_theta = np.dot(r1, r2) / (mag(r1) * mag(r2))
     cos_theta1 = np.dot(r2, r3) / (mag(r2) * mag(r3))
     cos_theta2 = np.dot(r1, r3) / (mag(r1) * mag(r3))
