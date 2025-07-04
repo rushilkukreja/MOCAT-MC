@@ -83,4 +83,47 @@ def SurfaceTCSmap(latitude, longitude, RADAR):
     y = tcs[1, :].reshape(nptsx, nptsy)
     z = tcs[2, :].reshape(nptsx, nptsy)
     
-    # Compute range & azimuth(
+    # Compute range & azimuth(bearing) to each grid point
+    R = np.sqrt(x**2 + y**2 + (z - Rheight)**2)
+    PHI = np.arctan2(y, x)
+    
+    # Resample to uniform grid (Trim grid a bit to avoid NaN's in output)
+    xs = np.linspace(np.ceil(np.min(x.flatten() / 1000)), 
+                     np.floor(np.max(x.flatten() / 1000) - 1), nptsx) * 1000
+    ys = np.linspace(np.ceil(np.min(y.flatten() / 1000)), 
+                     np.floor(np.max(y.flatten() / 1000) - 1), nptsy) * 1000
+    
+    xm, ym = np.meshgrid(xs, ys)
+    
+    # Interpolate to uniform grid
+    points = np.column_stack([x.flatten(), y.flatten()])
+    
+    Surf = griddata(points, z.flatten(), (xm, ym), method='linear')
+    R = griddata(points, R.flatten(), (xm, ym), method='linear')
+    PHI = griddata(points, PHI.flatten(), (xm, ym), method='linear')
+    
+    return R, PHI, xs, ys, Surf
+
+def main():
+    """Example usage of SurfaceTCSmap function."""
+    # Example parameters
+    latitude = np.linspace(0.5, 0.6, 50)  # rad
+    longitude = np.linspace(-1.3, -1.2, 50)  # rad
+    
+    RADAR = {
+        'Rlat': 0.55,  # rad
+        'Rlon': -1.25,  # rad
+        'Rheight': 1000  # m
+    }
+    
+    # Generate maps
+    R, PHI, x, y, Surf = SurfaceTCSmap(latitude, longitude, RADAR)
+    
+    print(f"Generated maps with shape: {R.shape}")
+    print(f"X range: {x[0]:.1f} to {x[-1]:.1f} m")
+    print(f"Y range: {y[0]:.1f} to {y[-1]:.1f} m")
+    print(f"Range min/max: {np.nanmin(R):.1f} to {np.nanmax(R):.1f} m")
+    print(f"Azimuth min/max: {np.nanmin(PHI):.3f} to {np.nanmax(PHI):.3f} rad")
+
+if __name__ == "__main__":
+    main() 
