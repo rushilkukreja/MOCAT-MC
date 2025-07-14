@@ -114,6 +114,8 @@ MOCAT-MC/
 ## Contributors
 
 - Rushil Kukreja, Thomas Jefferson High School for Science and Technology
-- Prof. Edward J. Oughton, George Mason University
+- Dr. Edward J. Oughton, George Mason University
 - Dr. Giovanni Lavezzi, Massachusetts Institute of Technology
-- Prof. Richard Linares, Massachusetts Institute of Technology
+- Dr. Enrico Zucchelli, Massachusetts Institute of Technology
+- Dr. Daniel Zhang, Lincoln Labs
+- Dr. Richard Linares, Massachusetts Institute of Technology
